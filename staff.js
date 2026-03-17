@@ -10,6 +10,27 @@ document.getElementById("staffForm").addEventListener("submit",function(e)
         position : formData.get("position")
     };
 
+        if (document.getElementById("employee_id").value.trim() === "") 
+        {
+            alert("Employee ID cannot be empty");
+            return false;
+        }
+
+        if (document.getElementById("employee_name").value.trim() === "") 
+        {
+            alert("Employee name cannot be empty");
+            return false;
+        }
+
+        if (document.getElementById("contact").value.trim() === "") 
+        {
+            alert("Contact Number cannot be empty");
+            return false;
+        }
+
+
+
+
     fetch("staff.php",{
         method : "POST",
         headers: { "Content-Type": "application/json" },
