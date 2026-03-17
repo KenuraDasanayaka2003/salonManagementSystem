@@ -11,16 +11,6 @@ if ($method == "POST")
     $customer_email = mysqli_real_escape_string($conn,$data["email"]);
     $contact_no = mysqli_real_escape_string($conn,$data["contact"]);
 
-    if ($customer_id == '')
-    {
-        $customer_id = NULL;
-    }
-
-    if ($customer_name == '')
-    {
-        $customer_name = NULL;
-    }
-
     $query = "INSERT INTO customer (customer_id,customer_name,customer_email,contact_no) 
                 VALUES ('$customer_id','$customer_name','$customer_email','$contact_no')";
     if(mysqli_query($conn, $query)) {
