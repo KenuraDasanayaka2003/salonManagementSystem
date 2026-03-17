@@ -9,6 +9,19 @@ document.getElementById("customerForm").addEventListener("submit", function(e) {
         email : formData.get("customer_email"),
         contact : formData.get("contact_no")
     };
+    
+    if (document.getElementById("customer_id").value.trim() === "") 
+        {
+            alert("Customer id cannot be empty");
+            return false;
+        }
+
+    
+    if (document.getElementById("customer_name").value.trim() === "") 
+        {
+            alert("Customer name cannot be empty");
+            return false;
+        }
 
     fetch("customer.php", {
         method: "POST",
