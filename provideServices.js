@@ -8,6 +8,20 @@ document.getElementById("provideServicesForm").addEventListener("submit", functi
         service_id : formData.get("service_id")
     };
 
+        if (document.getElementById("employee_id").value.trim() === "") 
+        {
+            alert("Employee ID cannot be empty");
+            return false;
+        }
+
+        if (document.getElementById("service_id").value.trim() === "") 
+        {
+            alert("Service ID cannot be empty");
+            return false;
+        }
+
+
+
     fetch("provideServices.php", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
