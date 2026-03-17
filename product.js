@@ -11,6 +11,27 @@ document.getElementById("productForm").addEventListener("submit",function(e)
         product_price : formData.get("product_price")
     };
 
+        if (document.getElementById("product_id").value.trim() === "") 
+        {
+            alert("Product ID cannot be empty");
+            return false;
+        }
+
+        if (document.getElementById("employee_id").value.trim() === "") 
+        {
+            alert("Employee ID cannot be empty");
+            return false;
+        }
+
+        if (document.getElementById("product_name").value.trim() === "") 
+        {
+            alert("Product name cannot be empty");
+            return false;
+        }
+
+
+
+
     fetch("product.php",{
         method : "POST",
         headers: { "Content-Type": "application/json" },
