@@ -8,6 +8,20 @@ document.getElementById("buyProductsForm").addEventListener("submit", function(e
         product_id : formData.get("product_id")
     };
 
+    if (document.getElementById("customer_id").value.trim() === "") 
+        {
+            alert("Customer ID cannot be empty");
+            return false;
+        }
+
+    if (document.getElementById("product_id").value.trim() === "") 
+        {
+            alert("Product ID cannot be empty");
+            return false;
+        }
+
+
+
     fetch("productPurchases.php", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
