@@ -10,6 +10,26 @@ document.getElementById("appointmentForm").addEventListener("submit", function(e
         app_date: formData.get("appointment_date"),
         app_time: formData.get("appointment_time")
     };
+        if (document.getElementById("appointment_id").value.trim() === "") 
+        {
+            alert("Appointment ID cannot be empty");
+            return false;
+        }
+
+        if (document.getElementById("customer_id").value.trim() === "") 
+        {
+            alert("Customer ID cannot be empty");
+            return false;
+        }
+
+        if (document.getElementById("service_id").value.trim() === "") 
+        {
+            alert("Service ID cannot be empty");
+            return false;
+        }
+
+
+
 
     fetch("appointments.php", {
         method: "POST",
