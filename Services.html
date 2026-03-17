@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="ServicesStyle.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg" id="nav1">
+        <div class="container-fluid">
+            <a class="navbar-brand d-flex align-items-center" href="#">
+                <img src="salonLogo.png" alt="Salon Logo" id="logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="Home.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Customer.html">Customer</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Appointments.html">Appointments</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Staff.html">Staff</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Product.html">Products</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="payment.html">Payment</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="productPurchases.html">Purchases</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="provideServices.html">Provided Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="takeServices.html">Taken Services</a>
+                    </li>
+                </ul>
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
+                    <button class="btn btn-outline-success" type="submit"
+                        style="background-color: cornflowerblue; color: black;">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+    <hr><hr>
+    <h2 id="head2">Services</h2>
+    <div class="service-container">
+        <div class="service-form">
+            <form id="serviceForm">
+                <div>
+                    <label for="service_id">Service ID : </label>
+                    <input type="text" name="service_id" id="service_id">
+                    <label for="service_name">Service Name : </label>
+                    <input type="text" name="service_name" id="service_name">
+                    <label for="service_charge">Service Charge : </label>
+                    <input type="text" name="service_charge" id="service_charge">
+                </div>
+                <div class="button-class">
+                    <button class="service-button" type="submit">Add a new service</button>
+                    <button class="service-button" type="button" id="removeButton">Remove an existing service</button>
+                    <button class="service-button" type="button" id="updateButton">Update an existing service</button>
+                    <button class="service-button" type="button" id="searchButton">Get a service by ID</button>
+                    <button class="service-button" type="button" onclick="getServices()">Get all services</button>
+                    <div id="serviceList"></div>
+                </div>
+            </form>
+        </div>
+        <div class="service-image">
+            <img src="servicePageImage.png" alt="Service Page Image">
+        </div>
+    </div>
+    <hr>
+    <hr>
+    <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-section">
+        <h2>GLAMOUR salon</h2>
+        <p>Your trusted place to enhance your elegant beauty...</p>
+      </div>
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="Home.html">Home</a></li>
+          <li><a href="Customer.html">Customer</a></li>
+          <li><a href="Appointments.html">Appointments</a></li>
+          <li><a href="Staff.html">Staff</a></li>
+          <li><a href="#">Services</a></li>
+          <li><a href="payment.html">Payment</a></li> 
+          <li><a href="productPurchases.html">Purchases</a></li>
+          <li><a href="provideServices.html">Provided Services</a></li>
+          <li><a href="takeServices.html">Taken Services</a></li>         
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Contact</h3>
+        <p>Email : info@glamoursalon.com</p>
+        <p>Phone : +94 112 123456</p>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 Glamour Salon Management System. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+<script src="service.js"></script>
+</html>

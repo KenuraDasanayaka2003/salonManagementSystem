@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Appointments</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <link rel="stylesheet" href="AppointmentStyle.css">
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg" id="nav1">
+    <div class="container-fluid">
+      <a class="navbar-brand d-flex align-items-center" href="#">
+        <img src="salonLogo.png" alt="Salon Logo" id="logo">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="Home.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="Customer.html">Customer</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Appointments</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="Staff.html">Staff</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="Services.html">Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="Product.html">Products</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="payment.html">Payment</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="productPurchases.html">Purchases</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="provideServices.html">Provided Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="takeServices.html">Taken Services</a>
+          </li>
+        </ul>
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
+          <button class="btn btn-outline-success" type="submit"
+            style="background-color: cornflowerblue; color: black;">Search</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+  <hr>
+  <hr>
+  <h1 id="header1">Appointments</h1>
+  <hr>
+  <div class="appointment-container">
+    <div class="appointment-form">
+      <form id="appointmentForm">
+        <div>
+          <label for="appointment_id">Appointment ID : </label>
+          <input type="text" name="appointment_id" id="appointment_id">
+          <label for="customer_id">Customer ID : </label>
+          <input type="text" name="customer_id" id="customer_id">
+          <label for="service_id">Services : </label>
+            <div class="form-group">
+              <select id="service_id" name="service_id">
+                <option value="" selected disabled>-- Select a Service --</option>
+              </select>
+            </div>
+          <label for="appointment_date">Appointment Date : </label>
+          <input type="date" name="appointment_date" id="appointment_date">
+          <label for="appointment_time">Appointment Time : </label>
+          <input type="time" name="appointment_time" id="appointment_time">
+        </div>
+        <div class="button-class">
+          <button class="appointment-button" type="submit">Make an appointment</button>
+          <button class="appointment-button" type="button" id="removeButton">Cancel an existing appointment</button>
+
+          <button class="appointment-button" type="button" id="updateButton">Update an appointment</button>
+          <button class="appointment-button" type="button" id="searchCustomerButton">Search appointment by Customer</button>
+          <table id="appointmentCustomerTable" border="1" cellpadding="8">
+            <thead>
+              <tr>
+                <th>Appointment ID</th>
+                <th>Service</th>
+                <th>Date</th>
+                <th>Time</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+
+
+          <button class="appointment-button" type="button" id="searchAppointmentButton">Get an appointment details</button>
+          <table id="appointmentTable" border="1" cellpadding="8">
+            <thead>
+              <tr>
+                <th>Customer ID</th>
+                <th>Service</th>
+                <th>Date</th>
+                <th>Time</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+
+          <button class="appointment-button" type="button" onclick="getAppointments()">View all appointments</button>
+          <div id="appointmentList"></div>
+        </div>
+
+      </form>
+    </div>
+    <div class="appointment-image">
+      <img src="appointmentImage.png" alt="appointment image">
+    </div>
+  </div>
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-section">
+        <h2>GLAMOUR salon</h2>
+        <p>Your trusted place to enhance your elegant beauty...</p>
+      </div>
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="Home.html">Home</a></li>
+          <li><a href="Customer.html">Customer</a></li>
+          <li><a href="#">Appointments</a></li>
+          <li><a href="Staff.html">Staff</a></li>
+          <li><a href="Services.html">Services</a></li>
+          <li><a href="Product.html">Products</a></li>
+          <li><a href="payment.html">Payment</a></li>
+          <li><a href="productPurchases.html">Purchases</a></li>
+          <li><a href="provideServices.html">Provided Services</a></li>
+          <li><a href="takeServices.html">Taken Services</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Contact</h3>
+        <p>Email : info@glamoursalon.com</p>
+        <p>Phone : +94 112 123456</p>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 Glamour Salon Management System. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+<script src="appointment.js"></script>
+</html>
