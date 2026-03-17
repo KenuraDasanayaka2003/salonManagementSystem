@@ -8,6 +8,20 @@ document.getElementById("takenServicesForm").addEventListener("submit", function
         service_id : formData.get("service_id")
     };
 
+        if (document.getElementById("customer_id").value.trim() === "") 
+        {
+            alert("Customer ID cannot be empty");
+            return false;
+        }
+
+        if (document.getElementById("service_id").value.trim() === "") 
+        {
+            alert("Service ID cannot be empty");
+            return false;
+        }
+
+
+
     fetch("takeServices.php", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
