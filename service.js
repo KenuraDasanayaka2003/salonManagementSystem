@@ -9,6 +9,20 @@ document.getElementById("serviceForm").addEventListener("submit",function(e)
         charge : formData.get("service_charge")
     }
 
+        if (document.getElementById("service_id").value.trim() === "") 
+        {
+            alert("Service ID cannot be empty");
+            return false;
+        }
+
+        if (document.getElementById("service_name").value.trim() === "") 
+        {
+            alert("Service name cannot be empty");
+            return false;
+        }
+
+
+
     fetch("service.php",{
         method : "POST",
         headers: { "Content-Type": "application/json" },
