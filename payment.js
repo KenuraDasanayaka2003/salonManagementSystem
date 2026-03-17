@@ -11,6 +11,18 @@ document.getElementById("paymentForm").addEventListener("submit",function(e)
         payment_amount : formData.get("payment_amount")
     };
 
+    if (document.getElementById("payment_id").value.trim() === "") 
+        {
+            alert("Payment ID cannot be empty");
+            return false;
+        }
+
+    if (document.getElementById("customer_id").value.trim() === "") 
+        {
+            alert("Customer ID cannot be empty");
+            return false;
+        }
+
     fetch("payment.php",{
         method : "POST",
         headers: { "Content-Type": "application/json" },
