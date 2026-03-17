@@ -28,9 +28,6 @@ document.getElementById("appointmentForm").addEventListener("submit", function(e
             return false;
         }
 
-
-
-
     fetch("appointments.php", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
